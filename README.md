@@ -50,21 +50,27 @@ Check status of Minikube:
 
    minikube status
 <img width="1344" height="251" alt="Screenshot 2026-01-05 222317" src="https://github.com/user-attachments/assets/812c6fc8-8b70-4972-b339-c1443e8330b1" />
-
-![Uploading Screenshot 2026-01-05 222959.png…]()
-
+<img width="984" height="283" alt="Screenshot 2026-01-05 222959" src="https://github.com/user-attachments/assets/bdca2ea1-7856-4bee-960a-99779de60e39" />
 
 
 ### CLi Adhoc command:
 **Create Deployment and svc using CLI adhoc commands:**
 -Install Kubectl 
      curl.exe -LO https://dl.k8s.io/release/v1.35.0/bin/windows/amd64/kubectl.exe
+<img width="1410" height="127" alt="Screenshot 2026-01-05 223051" src="https://github.com/user-attachments/assets/5668c05f-5511-4b56-977b-d072d3d50a46" />
+
+
+Kubectl run mywe --image=httpd
+
+<img width="855" height="149" alt="Screenshot 2026-01-05 223158" src="https://github.com/user-attachments/assets/fcf7f47e-9d18-41fc-b71d-98cadff8954b" />
+
 
 - Now create deployment using image:
 
-      kubectl create deployment myweb --image=pratikshinde55/apache-webserver:v1
+      kubectl create deployment mywe1 --image=nginx:latest
 
-  ![Deployment](https://github.com/user-attachments/assets/7ed66fae-9733-4ef7-abe2-c80e0879ddaa)
+<img width="707" height="212" alt="Screenshot 2026-01-05 223128" src="https://github.com/user-attachments/assets/7e5b5893-f52f-44a9-ad04-cc804d3fad38" />
+
 
 - Use describe:
 
@@ -75,22 +81,25 @@ Check status of Minikube:
       kubectl get pods
    kubectl get deployment
 
-   ![get-cmd](https://github.com/user-attachments/assets/88dc8c0c-917d-4c97-8126-d43c31459b29)
+<img width="1053" height="495" alt="Screenshot 2026-01-05 223310" src="https://github.com/user-attachments/assets/3ad68483-bf2a-4859-b91d-a503645c152f" />
+
 
 - Get Full lenght information:
 
       kubectl get pods myweb-b77b85fb9-bghs9  -o wide
-      kubectl get deployment myweb -o wide
+      kubectl get deployment mywe1 -o wide
 
    **Load Balancer: [expose] for CLI way**
 - Create service or expose our deployment app to outside world:
-
-      kubectl expose deployment myweb --type=NodePort --port=80
+ 
+      kubectl expose deployment mywe1 --type=ClusterIP --name=mywe-svc --port=80 --target-port
+      <img width="1338" height="609" alt="Screenshot 2026-01-05 223512" src="https://github.com/user-attachments/assets/5ed83d67-6f74-4d85-bdeb-2e2a993e27fa" />
 
 - Print list of LB:
 
       kubectl get svc 
       kubectl get service
+<img width="835" height="90" alt="Screenshot 2026-01-05 223454" src="https://github.com/user-attachments/assets/db32fb30-7acb-4e7a-92db-35207b392c7a" />
 
 - **Note:** `--type=NodePort` is define give Public_IP & `--port=80` => This is port number of Container or If any app running inside pod/Container then give that port no for example Python-flask app port 5000.
       
@@ -102,10 +111,15 @@ Check status of Minikube:
 ### Manual Scaling using Adhoc command: [scale]
 - Command for manual scale:
 
-      kubectl scale deployment myweb --replicas=3   
+      kubectl scale deployment mywe1 --replicas=5  
     
-  ![scale-cmd](https://github.com/user-attachments/assets/3ecc1a0f-c6e5-41db-89f6-d8d4491bec91)
+ <img width="1010" height="227" alt="Screenshot 2026-01-05 223359" src="https://github.com/user-attachments/assets/b213a52e-f334-4873-bafc-3789944a926d" />
 
+      kubectl scale deployment mywe1 --replicas=5  
+
+<img width="854" height="147" alt="Screenshot 2026-01-05 223426" src="https://github.com/user-attachments/assets/a13e0102-0b75-4a32-98e7-cfc1b87eaeac" />
+
+      
 - delete command for delete all k8s resources:
 
       kubectl delete all -all
