@@ -48,7 +48,7 @@ To Create Single-Node Culster using minikube command is:
 Check status of Minikube:
 
 
-   minikube status
+     minikube status
 <img width="1344" height="251" alt="Screenshot 2026-01-05 222317" src="https://github.com/user-attachments/assets/812c6fc8-8b70-4972-b339-c1443e8330b1" />
 <img width="984" height="283" alt="Screenshot 2026-01-05 222959" src="https://github.com/user-attachments/assets/bdca2ea1-7856-4bee-960a-99779de60e39" />
 
@@ -57,51 +57,55 @@ Check status of Minikube:
 **Create Deployment and svc using CLI adhoc commands:**
 -Install Kubectl 
      curl.exe -LO https://dl.k8s.io/release/v1.35.0/bin/windows/amd64/kubectl.exe
+     
 <img width="1410" height="127" alt="Screenshot 2026-01-05 223051" src="https://github.com/user-attachments/assets/5668c05f-5511-4b56-977b-d072d3d50a46" />
 
 
-Kubectl run mywe --image=httpd
+         Kubectl run mywe --image=httpd
 
 <img width="855" height="149" alt="Screenshot 2026-01-05 223158" src="https://github.com/user-attachments/assets/fcf7f47e-9d18-41fc-b71d-98cadff8954b" />
 
 
 - Now create deployment using image:
-
-      kubectl create deployment mywe1 --image=nginx:latest
+ 
+        kubectl create deployment mywe1 --image=nginx:latest
 
 <img width="707" height="212" alt="Screenshot 2026-01-05 223128" src="https://github.com/user-attachments/assets/7e5b5893-f52f-44a9-ad04-cc804d3fad38" />
 
 
 - Use describe:
 
-      kubectl describe deployment myweb
+         kubectl describe deployment myweb
 
 - Print list of Deployment & Pod:
 
       kubectl get pods
-   kubectl get deployment
+      kubectl get deployment
+  
 
 <img width="1053" height="495" alt="Screenshot 2026-01-05 223310" src="https://github.com/user-attachments/assets/3ad68483-bf2a-4859-b91d-a503645c152f" />
 
 
 - Get Full lenght information:
 
-      kubectl get pods myweb-b77b85fb9-bghs9  -o wide
+      kubectl get pods mywe1-b77b85fb9-bghs9  -o wide
       kubectl get deployment mywe1 -o wide
 
    **Load Balancer: [expose] for CLI way**
 - Create service or expose our deployment app to outside world:
  
       kubectl expose deployment mywe1 --type=ClusterIP --name=mywe-svc --port=80 --target-port
-      <img width="1338" height="609" alt="Screenshot 2026-01-05 223512" src="https://github.com/user-attachments/assets/5ed83d67-6f74-4d85-bdeb-2e2a993e27fa" />
+  
+  <img width="1338" height="609" alt="Screenshot 2026-01-05 223512" src="https://github.com/user-attachments/assets/5ed83d67-6f74-4d85-bdeb-2e2a993e27fa" />
 
 - Print list of LB:
 
       kubectl get svc 
       kubectl get service
+  
 <img width="835" height="90" alt="Screenshot 2026-01-05 223454" src="https://github.com/user-attachments/assets/db32fb30-7acb-4e7a-92db-35207b392c7a" />
 
-- **Note:** `--type=NodePort` is define give Public_IP & `--port=80` => This is port number of Container or If any app running inside pod/Container then give that port no for example Python-flask app port 5000.
+- **Note:** `--type=NodePort/ClusterIP` is define give Public_IP & `--port=80` => This is port number of Container or If any app running inside pod/Container then give that port no for example Python-flask app port 5000.
       
       kubectl describe svc myweb
 
