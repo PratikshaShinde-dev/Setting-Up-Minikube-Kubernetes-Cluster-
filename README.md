@@ -1,4 +1,4 @@
-<img width="707" height="438" alt="Screenshot 2026-01-06 225844" src="https://github.com/user-attachments/assets/039c12b9-f38e-4b93-b7a6-32fe63b70c87" /># Setting-Up-Minikube-Kubernetes-Cluster-
+
 
 ## In This Project I Created following things:
 
@@ -69,6 +69,7 @@ Check status of Minikube:
 - Now create deployment using image:
  
         kubectl create deployment mywe1 --image=nginx:latest
+<img width="944" height="181" alt="Screenshot 2026-01-05 223255" src="https://github.com/user-attachments/assets/a5debe7d-46d4-4ad5-b2ce-285072c056ea" />
 
 <img width="707" height="212" alt="Screenshot 2026-01-05 223128" src="https://github.com/user-attachments/assets/7e5b5893-f52f-44a9-ad04-cc804d3fad38" />
 
