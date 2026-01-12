@@ -43,9 +43,22 @@ Here i create Single-node cluster that is means on single node Master & Worker N
 To Create Single-Node Culster using minikube command is:
 
     minikube start
+<img width="1449" height="248" alt="Screenshot 2026-01-05 222832" src="https://github.com/user-attachments/assets/4b80a0ba-c528-4bd1-b317-758b2ae8fe4d" />
 
-    ### CLi Adhoc command:
+Check status of Minikube:
+
+
+   minikube status
+<img width="1344" height="251" alt="Screenshot 2026-01-05 222317" src="https://github.com/user-attachments/assets/812c6fc8-8b70-4972-b339-c1443e8330b1" />
+
+![Uploading Screenshot 2026-01-05 222959.png…]()
+
+
+
+### CLi Adhoc command:
 **Create Deployment and svc using CLI adhoc commands:**
+-Install Kubectl 
+     curl.exe -LO https://dl.k8s.io/release/v1.35.0/bin/windows/amd64/kubectl.exe
 
 - Now create deployment using image:
 
