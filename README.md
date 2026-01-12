@@ -75,7 +75,7 @@ Check status of Minikube:
 
 - Use describe:
 
-         kubectl describe deployment myweb
+         kubectl describe deployment mywe1
 
 - Print list of Deployment & Pod:
 
