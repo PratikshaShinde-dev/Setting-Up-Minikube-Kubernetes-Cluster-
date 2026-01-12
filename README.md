@@ -88,7 +88,7 @@ Check status of Minikube:
 
 - Get Full lenght information:
 
-      kubectl get pods mywe1-b77b85fb9-bghs9  -o wide
+      kubectl get pods mywe1 -o wide
       kubectl get deployment mywe1 -o wide
 
    **Load Balancer: [expose] for CLI way**
