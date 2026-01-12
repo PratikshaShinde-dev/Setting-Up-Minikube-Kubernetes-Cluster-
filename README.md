@@ -81,6 +81,7 @@ Check status of Minikube:
 
       kubectl get pods
       kubectl get deployment
+      lubectl describe deployment mywe1
   
 
 <img width="1053" height="495" alt="Screenshot 2026-01-05 223310" src="https://github.com/user-attachments/assets/3ad68483-bf2a-4859-b91d-a503645c152f" />
@@ -107,7 +108,7 @@ Check status of Minikube:
 
 - **Note:** `--type=NodePort/ClusterIP` is define give Public_IP & `--port=80` => This is port number of Container or If any app running inside pod/Container then give that port no for example Python-flask app port 5000.
       
-      kubectl describe svc myweb
+      kubectl describe svc mywe1
 
   - Here, We see all pods are attached to the Load Balancer, If we Scale-out or Scale-in that will automatic upadte to Load Balancer Service
   - 
@@ -119,7 +120,7 @@ Check status of Minikube:
     
  <img width="1010" height="227" alt="Screenshot 2026-01-05 223359" src="https://github.com/user-attachments/assets/b213a52e-f334-4873-bafc-3789944a926d" />
 
-      kubectl scale deployment mywe1 --replicas=5  
+      kubectl scale deployment mywe1 --replicas=2 
 
 <img width="854" height="147" alt="Screenshot 2026-01-05 223426" src="https://github.com/user-attachments/assets/a13e0102-0b75-4a32-98e7-cfc1b87eaeac" />
 
