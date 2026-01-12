@@ -1,4 +1,4 @@
-# Setting-Up-Minikube-Kubernetes-Cluster-
+<img width="707" height="438" alt="Screenshot 2026-01-06 225844" src="https://github.com/user-attachments/assets/039c12b9-f38e-4b93-b7a6-32fe63b70c87" /># Setting-Up-Minikube-Kubernetes-Cluster-
 
 ## In This Project I Created following things:
 
@@ -109,8 +109,8 @@ Check status of Minikube:
       
       kubectl describe svc myweb
 
-  - Here, We see all three pods are attached to the Load Balancer, If we Scale-out or Scale-in that will automatic upadte to Load Balancer Service
-  ![See all details](https://github.com/user-attachments/assets/59709750-cdd0-4f5d-990e-3b8d615ba2cb)
+  - Here, We see all pods are attached to the Load Balancer, If we Scale-out or Scale-in that will automatic upadte to Load Balancer Service
+  - 
 
 ### Manual Scaling using Adhoc command: [scale]
 - Command for manual scale:
@@ -126,7 +126,8 @@ Check status of Minikube:
       
 - delete command for delete all k8s resources:
 
-      kubectl delete all -all
+      kubectl.exe delete pods -all
+<img width="856" height="124" alt="Screenshot 2026-01-05 223643" src="https://github.com/user-attachments/assets/e54c6cd5-20b2-41b0-98eb-b52fe298132d" />
 
   ### Delete minikube single-node cluster:
 
@@ -139,7 +140,6 @@ Check status of Minikube:
 # <a id="multi-node-cluster"></a>Multi-Node-Cluster:
 Now here create multi-node cluster using minikube.
 
-Now here create multi-node cluster using minikube.
 
 **Interact with Kubernetes:**
 1. CLI (Adhoc commands)
@@ -149,11 +149,7 @@ Now here create multi-node cluster using minikube.
 **Start Minikube Multi-node Cluster Command:**
 
      minikube start -n 2 -p pscluster2
-
-![Startind-status](https://github.com/user-attachments/assets/ce59b492-f1a5-4f7e-b366-57d187afa23e)
-
-![list-of nodes](https://github.com/user-attachments/assets/05fec64d-712a-4bd0-9da9-ef20de357504)
-
+<img width="1399" height="121" alt="Screenshot 2026-01-05 223729" src="https://github.com/user-attachments/assets/00933fe4-dbca-47bd-9e8b-54d8f2c0cd48" />
 
 # <a id="k8s-resources"></a>Resource Types in K8s:
 
@@ -167,20 +163,36 @@ Now here create multi-node cluster using minikube.
     spec:
        containers:
          - name: 
-           image: 
+           image:
+
+
+    apiVersion: v1
+kind: Pod
+metadata:
+   name: mypod
+   labels:
+   
+spec:
+   containers: 
+     - name: mycontainer
+       image: httpd
+
+<img width="707" height="438" alt="Screenshot 2026-01-06 225844" src="https://github.com/user-attachments/assets/9c64b06e-3b75-45a4-926e-ca37ea842cef" />
+
 ## 1. Pod resource type (Only Launch Pod without any Deployment or else):
 
 - Create file:
   
-       notepad pod.yml
-
-  ![pod-file](https://github.com/user-attachments/assets/31bc7b76-cb74-45b8-acfd-80ce94e5f257)
-
-- Describe command:
-
-       kubectl describe pods myonlypod
+        vim first.yml
   
-  ![Event](https://github.com/user-attachments/assets/705b1c75-5aa9-4dd7-8c51-dfabba52018b)
+<img width="867" height="328" alt="Screenshot 2026-01-06 225834" src="https://github.com/user-attachments/assets/3fe59921-74b8-497a-b6cf-8d093869cbf7" />
 
-  
+-Check created pod:
+      kubectl create -f first.yml
+-Selectors For Specific details to search in Pod:
+<img width="1140" height="782" alt="Screenshot 2026-01-06 225823" src="https://github.com/user-attachments/assets/ccec3c80-ac78-416b-8e07-2405afe9da6e" />
+
+ -To check specific pod with all details :
+ <img width="867" height="328" alt="Screenshot 2026-01-06 225834" src="https://github.com/user-attachments/assets/35d5080c-2eef-4f37-89d2-ffffce36d16e" />
+
 ## 2. Replication Controller resource type: [rc]
