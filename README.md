@@ -60,6 +60,7 @@ Check status of Minikube:
      
 <img width="1410" height="127" alt="Screenshot 2026-01-05 223051" src="https://github.com/user-attachments/assets/5668c05f-5511-4b56-977b-d072d3d50a46" />
 
+<img width="707" height="212" alt="Screenshot 2026-01-05 223128" src="https://github.com/user-attachments/assets/7e5b5893-f52f-44a9-ad04-cc804d3fad38" />
 
          Kubectl run mywe --image=httpd
 
@@ -70,8 +71,6 @@ Check status of Minikube:
  
         kubectl create deployment mywe1 --image=nginx:latest
 <img width="944" height="181" alt="Screenshot 2026-01-05 223255" src="https://github.com/user-attachments/assets/a5debe7d-46d4-4ad5-b2ce-285072c056ea" />
-
-<img width="707" height="212" alt="Screenshot 2026-01-05 223128" src="https://github.com/user-attachments/assets/7e5b5893-f52f-44a9-ad04-cc804d3fad38" />
 
 
 - Use describe:
